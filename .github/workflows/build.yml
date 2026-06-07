@@ -9,6 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      KEYSTORE_PASSWORD: CorisPlaintes2026
+      KEY_PASSWORD: CorisPlaintes2026
+      KEY_ALIAS: plaintes
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,6 +28,20 @@ jobs:
         with:
           gradle-version: '8.5'
 
+      - name: Generate release keystore (keytool, JKS)
+        run: |
+          rm -f release.keystore
+          keytool -genkeypair \
+            -keystore release.keystore \
+            -storetype JKS \
+            -storepass "$KEYSTORE_PASSWORD" \
+            -keypass "$KEY_PASSWORD" \
+            -alias "$KEY_ALIAS" \
+            -keyalg RSA -keysize 2048 \
+            -validity 36500 \
+            -dname "CN=Coris Plaintes, O=Coris Assurances, L=Ouagadougou, C=BF"
+          keytool -list -v -keystore release.keystore -storepass "$KEYSTORE_PASSWORD" | head -20
+
       - name: Build release APK (signé)
         run: gradle assembleRelease --no-daemon --stacktrace
 
@@ -35,6 +53,7 @@ jobs:
           mkdir -p out
           cp app/build/outputs/apk/release/app-release.apk out/CorisPlaintes-release.apk
           cp app/build/outputs/apk/debug/app-debug.apk    out/CorisPlaintes-debug.apk
+          ls -la out/
 
       - name: Upload Release APK
         uses: actions/upload-artifact@v4

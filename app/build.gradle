@@ -16,11 +16,11 @@ android {
 
     signingConfigs {
         release {
+            // Keystore généré dynamiquement par le workflow CI (keytool)
             storeFile file("${rootDir}/release.keystore")
-            storePassword 'CorisPlaintes2026'
-            keyAlias 'plaintes'
-            keyPassword 'CorisPlaintes2026'
-            storeType 'PKCS12'
+            storePassword System.getenv("KEYSTORE_PASSWORD") ?: 'CorisPlaintes2026'
+            keyAlias System.getenv("KEY_ALIAS") ?: 'plaintes'
+            keyPassword System.getenv("KEY_PASSWORD") ?: 'CorisPlaintes2026'
         }
     }
 
