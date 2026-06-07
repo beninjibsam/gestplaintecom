@@ -8,11 +8,13 @@
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
+    <!-- Splash : barre de statut bleu Coris pour bien voir l'heure/batterie -->
     <style name="Theme.Plaintes.Splash" parent="Theme.Plaintes">
         <item name="android:windowBackground">@drawable/splash_background</item>
-        <item name="android:statusBarColor">@color/white</item>
-        <item name="android:navigationBarColor">@color/splash_bg_end</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/coris_blue</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowFullscreen">false</item>
     </style>
 </resources>
