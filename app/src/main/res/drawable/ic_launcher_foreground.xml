@@ -1,36 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Avant-plan : C/S rouge stylisé (marque Coris) sur fond bleu transparent -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- C rouge -->
     <path
-        android:pathData="M54,30
-                          C40.7,30 30,40.7 30,54
-                          C30,67.3 40.7,78 54,78
-                          L54,68
-                          C46.3,68 40,61.7 40,54
-                          C40,46.3 46.3,40 54,40
-                          C60,40 65.3,43.7 67.5,49.0
-                          L76,46
-                          C72.5,37 64,30 54,30 Z"
-        android:fillColor="#ED1C24" />
+        android:pathData="M54,30 C40.7,30 30,40.7 30,54 C30,67.3 40.7,78 54,78 L54,68 C46.3,68 40,61.7 40,54 C40,46.3 46.3,40 54,40 C60.0,40 65.3,43.7 67.5,49.0 L76,46 C72.5,37 64,30 54,30 Z"
+        android:fillColor="#FFED1C24" />
 
-    <!-- Queue swoosh (S) -->
     <path
-        android:pathData="M66,50
-                          C71,53 74,58 74,64
-                          C74,72 67,78 59,78
-                          L59,70
-                          C63,70 66,67.5 66,64
-                          C66,61 64,58.5 61,57 Z"
-        android:fillColor="#ED1C24" />
+        android:pathData="M65,49 C70.5,53.3 74,59.0 74,65 C74,73.3 67,79 59,79 L59,71 C62.9,71 66,67.9 66,64 C66,61.0 64.0,58.5 61,57 Z"
+        android:fillColor="#FFED1C24" />
 
-    <!-- Cible haut-droite -->
     <path
-        android:pathData="M70,43 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"
-        android:fillColor="#ED1C24" />
+        android:pathData="M70,42 A3,3 0 1,0 76,42 A3,3 0 1,0 70,42 Z"
+        android:fillColor="#FFED1C24" />
 </vector>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Coris Assurances brand -->
-    <color name="coris_blue">#1B499D</color>
-    <color name="coris_blue_dark">#0F2D63</color>
-    <color name="coris_blue_light">#3C6CC4</color>
-    <color name="coris_red">#ED1C24</color>
-    <color name="coris_red_dark">#B5141A</color>
+    <color name="coris_blue">#FF1B499D</color>
+    <color name="coris_blue_dark">#FF0F2D63</color>
+    <color name="coris_blue_light">#FF3C6CC4</color>
+    <color name="coris_red">#FFED1C24</color>
+    <color name="coris_red_dark">#FFB5141A</color>
 
-    <!-- Legacy aliases used elsewhere -->
-    <color name="brand_primary">@color/coris_blue</color>
-    <color name="brand_primary_dark">@color/coris_blue_dark</color>
-    <color name="brand_accent">@color/coris_red</color>
-    <color name="brand_accent_light">#FFD2D4</color>
-    <color name="brand_secondary">@color/coris_blue_light</color>
+    <!-- Legacy aliases (hex direct, pas de references) -->
+    <color name="brand_primary">#FF1B499D</color>
+    <color name="brand_primary_dark">#FF0F2D63</color>
+    <color name="brand_accent">#FFED1C24</color>
+    <color name="brand_accent_light">#FFFFD2D4</color>
+    <color name="brand_secondary">#FF3C6CC4</color>
 
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
-    <color name="text_on_dark">#F8FAFC</color>
-    <color name="text_muted_on_dark">#CBD5E1</color>
-    <color name="text_on_light">#0F1E4D</color>
-    <color name="text_muted_on_light">#64748B</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="text_on_dark">#FFF8FAFC</color>
+    <color name="text_muted_on_dark">#FFCBD5E1</color>
+    <color name="text_on_light">#FF0F1E4D</color>
+    <color name="text_muted_on_light">#FF64748B</color>
 
-    <color name="splash_bg_start">#FFFFFF</color>
-    <color name="splash_bg_mid">#F4F7FB</color>
-    <color name="splash_bg_end">#E4ECF8</color>
+    <color name="splash_bg_start">#FFFFFFFF</color>
+    <color name="splash_bg_mid">#FFF4F7FB</color>
+    <color name="splash_bg_end">#FFE4ECF8</color>
 </resources>
