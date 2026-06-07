@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Avant-plan : bulle de dialogue blanche avec point d'exclamation rouge.
-     Symbole universel pour "plainte / réclamation". -->
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp"
-    android:height="108dp"
-    android:viewportWidth="108"
-    android:viewportHeight="108">
-
-    <!-- Ombre douce derrière la bulle -->
-    <path
-        android:pathData="M30,33 L80,33 A10,10 0 0,1 90,43 L90,71 A10,10 0 0,1 80,81 L56,81 L44,93 L46,81 L30,81 A10,10 0 0,1 20,71 L20,43 A10,10 0 0,1 30,33 Z"
-        android:fillColor="#33000000" />
-
-    <!-- Bulle de dialogue blanche -->
-    <path
-        android:pathData="M30,30 L80,30 A10,10 0 0,1 90,40 L90,68 A10,10 0 0,1 80,78 L56,78 L44,90 L46,78 L30,78 A10,10 0 0,1 20,68 L20,40 A10,10 0 0,1 30,30 Z"
-        android:fillColor="#FFFFFFFF" />
-
-    <!-- Bord intérieur subtil bleu Coris -->
-    <path
-        android:pathData="M30,34 L80,34 A6,6 0 0,1 86,40 L86,68 A6,6 0 0,1 80,74 L57,74 L52,79 L53,74 L30,74 A6,6 0 0,1 24,68 L24,40 A6,6 0 0,1 30,34 Z"
-        android:strokeColor="#FF1B499D"
-        android:strokeWidth="0"
-        android:fillColor="#00000000" />
-
-    <!-- Point d'exclamation : barre rouge -->
-    <path
-        android:pathData="M50,40 L60,40 L58,62 L52,62 Z"
-        android:fillColor="#FFED1C24" />
-
-    <!-- Point d'exclamation : pastille ronde -->
-    <path
-        android:pathData="M51,67 A4,4 0 1,0 59,67 A4,4 0 1,0 51,67 Z"
-        android:fillColor="#FFED1C24" />
-</vector>
+<!-- Avant-plan de l'icône adaptative : on insère le PNG fourni en l'insetant
+     de 15 % sur chaque côté pour qu'il reste entièrement visible après le
+     masquage du launcher (rond / squircle / carré arrondi). -->
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/app_icon"
+    android:inset="15%" />
