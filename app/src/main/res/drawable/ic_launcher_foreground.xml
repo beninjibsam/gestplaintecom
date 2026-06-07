@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Shield outline -->
+    <path
+        android:pathData="M54,30 L78,40 L78,62 C78,76 68,86 54,92 C40,86 30,76 30,62 L30,40 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Shield top highlight -->
+    <path
+        android:pathData="M54,30 L78,40 L78,52 C68,48 54,46 40,48 L30,52 L30,40 Z"
+        android:fillColor="#FCD34D" />
+
+    <!-- Document inside -->
+    <path
+        android:pathData="M44,52 L60,52 L65,57 L65,80 L44,80 Z"
+        android:fillColor="#1E3A8A" />
+    <path
+        android:pathData="M60,52 L60,57 L65,57 Z"
+        android:fillColor="#3B82F6" />
+
+    <!-- Document lines -->
+    <path
+        android:pathData="M47,62 L62,62"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M47,68 L62,68"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M47,74 L57,74"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round" />
+
+    <!-- Check mark -->
+    <path
+        android:pathData="M66,76 L69,79 L74,73"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+</vector>

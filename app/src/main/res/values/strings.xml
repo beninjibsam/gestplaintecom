@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Plaintes Commerciaux</string>
+    <string name="splash_title">Gestion des Plaintes</string>
+    <string name="splash_subtitle">des Commerciaux</string>
+    <string name="splash_tagline">Suivi · Traitement · Résolution</string>
+    <string name="loading">Chargement…</string>
+    <string name="target_url">http://41.223.234.74:5173/</string>
+</resources>
