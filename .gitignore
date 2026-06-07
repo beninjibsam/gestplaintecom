@@ -18,3 +18,4 @@ Thumbs.db
 local.properties
 *.bak
 release.keystore
+*Zone.Identifier*
