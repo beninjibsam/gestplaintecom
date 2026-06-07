@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Plaintes Commerciaux</string>
+    <string name="app_name">Coris Plaintes</string>
+    <string name="brand_coris">CORIS</string>
+    <string name="brand_assurances">ASSURANCES</string>
+    <string name="brand_country">BURKINA FASO</string>
     <string name="splash_title">Gestion des Plaintes</string>
     <string name="splash_subtitle">des Commerciaux</string>
     <string name="splash_tagline">Suivi · Traitement · Résolution</string>

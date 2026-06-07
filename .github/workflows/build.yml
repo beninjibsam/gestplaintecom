@@ -24,24 +24,37 @@ jobs:
         with:
           gradle-version: '8.5'
 
+      - name: Build release APK (signé)
+        run: gradle assembleRelease --no-daemon --stacktrace
+
       - name: Build debug APK
         run: gradle assembleDebug --no-daemon --stacktrace
 
-      - name: Rename APK
+      - name: Rename APKs
         run: |
           mkdir -p out
-          cp app/build/outputs/apk/debug/app-debug.apk out/PlaintesCommerciaux-debug.apk
+          cp app/build/outputs/apk/release/app-release.apk out/CorisPlaintes-release.apk
+          cp app/build/outputs/apk/debug/app-debug.apk    out/CorisPlaintes-debug.apk
 
-      - name: Upload APK artifact
+      - name: Upload Release APK
         uses: actions/upload-artifact@v4
         with:
-          name: PlaintesCommerciaux-debug-apk
-          path: out/PlaintesCommerciaux-debug.apk
+          name: CorisPlaintes-release-apk
+          path: out/CorisPlaintes-release.apk
+          retention-days: 90
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: CorisPlaintes-debug-apk
+          path: out/CorisPlaintes-debug.apk
           retention-days: 30
 
       - name: Create GitHub Release (on tag)
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: out/PlaintesCommerciaux-debug.apk
+          files: |
+            out/CorisPlaintes-release.apk
+            out/CorisPlaintes-debug.apk
           generate_release_notes: true

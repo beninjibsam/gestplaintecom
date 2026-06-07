@@ -3,6 +3,7 @@
 build/
 app/build/
 *.apk
+# release.keystore IS committed (private repo, internal distribution)
 
 # IDE
 .idea/

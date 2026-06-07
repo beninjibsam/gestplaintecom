@@ -7,17 +7,27 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.plaintes.app"
+        applicationId "bf.coris.plaintes"
         minSdk 26
         targetSdk 34
         versionCode 1
         versionName "1.0"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("${rootDir}/release.keystore")
+            storePassword 'CorisPlaintes2026'
+            keyAlias 'plaintes'
+            keyPassword 'CorisPlaintes2026'
+            storeType 'PKCS12'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
         debug {
             applicationIdSuffix ".debug"

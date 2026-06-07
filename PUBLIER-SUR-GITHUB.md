@@ -1,50 +1,54 @@
-# Comment obtenir l'APK via GitHub Actions
+# Compiler & installer l'APK
 
-Le workflow `.github/workflows/build.yml` compile l'APK automatiquement
-sur les serveurs de GitHub. Aucun Docker, JDK ou Android SDK requis localement.
+Le workflow GitHub Actions produit **2 APKs** à chaque push :
 
-## 1. Créer un dépôt GitHub vide
+| APK | Usage | Signature |
+|---|---|---|
+| `CorisPlaintes-release.apk` | **Pour distribution** (utilisateurs finaux) | Signé clé release (stable) |
+| `CorisPlaintes-debug.apk` | Test développeur (logs, debug) | Signé clé debug |
 
-Sur https://github.com → **New repository** → nom au choix
-(ex. `plaintes-mobile`) → **Private** ou **Public** → **Create repository**
-(sans cocher README, .gitignore, license).
+## 1. Récupérer l'APK release
 
-## 2. Pousser le code (depuis WSL Ubuntu)
+1. Push tes modifs sur GitHub (`git push`)
+2. https://github.com/beninjibsam/gestplaintecom/actions
+3. Attends le ✅ (~3 min)
+4. Clique sur le run → en bas, section **Artifacts**
+5. Télécharge **`CorisPlaintes-release-apk`** → dézippe → tu obtiens `CorisPlaintes-release.apk`
 
-```bash
-cd ~/plaintes-mobile
+## 2. Installer sur Android
 
-git init -b main
-git add .
-git commit -m "Initial commit: Plaintes Commerciaux Android app"
+### Le premier utilisateur sur le téléphone
 
-# Remplacer URL par celle de TON dépôt
-git remote add origin https://github.com/<TON-USER>/plaintes-mobile.git
-git push -u origin main
-```
+1. Ouvrir le `.apk` reçu (USB / mail / Drive / WhatsApp)
+2. Android demande : **« Autoriser les installations depuis cette source »** → activer
+   (Paramètres → Applis → Accès spécial → Installation d'apps inconnues)
+3. **Installer**
+4. Lancer **Coris Plaintes** depuis le tiroir d'applis
 
-> Si Git demande une authentification, utilise un **Personal Access Token**
-> (https://github.com/settings/tokens) comme mot de passe.
+### Les mises à jour (push suivants)
 
-## 3. Récupérer l'APK
+- Tu pousses du code → nouvel APK généré
+- L'utilisateur ouvre le nouveau `.apk` → **Android l'installe par dessus l'ancien sans rien redemander**
+  (parce que la signature est la même : clé release stable)
 
-1. Va sur `https://github.com/<TON-USER>/plaintes-mobile/actions`
-2. Attends ~3 min que le workflow **Build Android APK** passe au vert ✅
-3. Clique sur le run → en bas, section **Artifacts** →
-   télécharge `PlaintesCommerciaux-debug-apk.zip`
-4. Dézippe → tu obtiens `PlaintesCommerciaux-debug.apk`
+## 3. Pour un install sans aucun avertissement
 
-## 4. Installer sur ton téléphone Android
+Seule solution : passer par le **Google Play Store** (compte développeur 25 $ unique).
 
-- Transfère le `.apk` (USB, email, Drive, etc.)
-- Sur le téléphone : ouvrir le fichier
-- Autoriser **"Installer depuis cette source"** si demandé
-- Installer
+- Créer un compte : https://play.google.com/console
+- Suivre `app/build.gradle` → builder un `bundleRelease` (.aab) au lieu de `assembleRelease`
+- Uploader le `.aab` sur Play Console → piste *Production* ou *Test interne*
+- Les utilisateurs installent depuis le Play Store → zéro avertissement, Play Protect validé
 
-L'app affichera le splashscreen animé puis ouvrira
-http://41.223.234.74:5173/ en plein écran.
+Pour distribution interne entreprise (sans Play Store public) :
+- Piste **« Test interne »** dans Play Console (max 100 testeurs, lien direct)
+- ou MDM (Mobile Device Management) si flotte d'entreprise
 
-## Build APK signé pour release (plus tard)
+## Identifiants signature (à conserver)
 
-Pour distribuer hors développement, il faut signer avec une clé prod.
-Voir Android docs : https://developer.android.com/studio/publish/app-signing
+- Keystore : `release.keystore` (dans le repo, format PKCS12)
+- Mot de passe store/key : `CorisPlaintes2026`
+- Alias : `plaintes`
+- Validité : 100 ans
+
+⚠️ **Ne jamais perdre ce fichier** : sans lui tu ne pourras plus publier de mise à jour signée par la même clé.

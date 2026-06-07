@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="brand_primary">#1E3A8A</color>
-    <color name="brand_primary_dark">#0F1E4D</color>
-    <color name="brand_accent">#F59E0B</color>
-    <color name="brand_accent_light">#FCD34D</color>
-    <color name="brand_secondary">#3B82F6</color>
+    <!-- Coris Assurances brand -->
+    <color name="coris_blue">#1B499D</color>
+    <color name="coris_blue_dark">#0F2D63</color>
+    <color name="coris_blue_light">#3C6CC4</color>
+    <color name="coris_red">#ED1C24</color>
+    <color name="coris_red_dark">#B5141A</color>
+
+    <!-- Legacy aliases used elsewhere -->
+    <color name="brand_primary">@color/coris_blue</color>
+    <color name="brand_primary_dark">@color/coris_blue_dark</color>
+    <color name="brand_accent">@color/coris_red</color>
+    <color name="brand_accent_light">#FFD2D4</color>
+    <color name="brand_secondary">@color/coris_blue_light</color>
+
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="text_on_dark">#F8FAFC</color>
     <color name="text_muted_on_dark">#CBD5E1</color>
-    <color name="splash_bg_start">#0B1437</color>
-    <color name="splash_bg_mid">#1E3A8A</color>
-    <color name="splash_bg_end">#2563EB</color>
+    <color name="text_on_light">#0F1E4D</color>
+    <color name="text_muted_on_light">#64748B</color>
+
+    <color name="splash_bg_start">#FFFFFF</color>
+    <color name="splash_bg_mid">#F4F7FB</color>
+    <color name="splash_bg_end">#E4ECF8</color>
 </resources>
